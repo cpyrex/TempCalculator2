@@ -1,5 +1,6 @@
 package com.knox.chaz.tempcalculator;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +15,8 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.content.SharedPreferences.Editor;
+import android.widget.Toast;
+
 import java.text.NumberFormat;
 
 public class TempCalculaterActivity extends AppCompatActivity implements TextView.OnEditorActionListener {
@@ -78,6 +81,13 @@ public class TempCalculaterActivity extends AppCompatActivity implements TextVie
         // send to display widgets
         NumberFormat degree = NumberFormat.getIntegerInstance();
         resultTextView.setText(degree.format(result));
+
+        Context context = getApplicationContext();
+        CharSequence text = "Celcuis is " + resultTextView.getText() + " degrees";
+        int duration = Toast.LENGTH_LONG;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
 
 
         // formula for conversion of fahrenheit to celcius c = (f - 32) * 5/9
