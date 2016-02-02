@@ -83,7 +83,7 @@
                 android:layout_alignRight="@+id/headerTextView"
                 android:layout_alignEnd="@+id/headerTextView"
                 android:textSize="18sp"
-                android:text="_______________"
+                android:text="______________"
                 android:layout_column="4" />
         </TableRow>
     </TableLayout>
